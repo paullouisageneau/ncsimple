@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 		nc::Rlc::Combination c;
 		source.generate(c);
 
-		// Combination c should be sent trough the network
+		// Combination c should be sent through the network
 
 		// To send, coded data can be accessed with c.data() and c.codedSize()
 		// and coefficients with c.coeff(i) with i between 0 and c.componentsCount()
