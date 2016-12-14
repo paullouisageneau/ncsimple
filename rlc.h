@@ -90,22 +90,23 @@ public:
 	Rlc(uint64_t seed = 0);
 	~Rlc(void);
 	
+	// Source
 	int add(const char *data, size_t size);		// Add component from data	
-	bool generate(Combination &output);		// Generate combination with count components
+	bool generate(Combination &output);		// Generate combination
 	void clear(void);				// Clear system
 
+	// Sink
 	bool solve(Combination incoming);		// Add combination and try to solve, return true if innovative
-
 	int get(std::list<const Combination*> &decoded) const;		// Get all combinations	
 	int getDecoded(std::list<const Combination*> &decoded) const;	// Get decoded combinations	
 
-	size_t dump(std::ostream &os) const;		// Dump data from decoded combinations
-	void print(std::ostream &os) const;		// Print current system
-	
 	unsigned seenCount(void) const;			// Return seen combinations count (degree)
 	unsigned decodedCount(void) const;		// Return decoded combinations count
 	unsigned componentsCount(void) const;		// Return number of components in system
-	unsigned size(void) { return seenCount(); }
+	unsigned size(void) const { return seenCount(); }
+
+	size_t dump(std::ostream &os) const;		// Dump data from decoded combinations
+	void print(std::ostream &os) const;		// Print current system
 	
 private:
 	// Pseudo-random generator
