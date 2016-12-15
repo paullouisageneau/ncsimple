@@ -133,7 +133,7 @@ uint8_t Rlc::Generator::next(void)
 	uint8_t value;
 	do {
 		// Knuth's 64-bit linear congruential generator
-		mSeed = uint64_t(mSeed*6364136223846793005 + 1442695040888963407);
+		mSeed = uint64_t(mSeed*6364136223846793005L + 1442695040888963407L);
 		value = uint8_t(mSeed >> 56);
 	}
 	while(!mSeed || !value);	// zero is not a valid output
