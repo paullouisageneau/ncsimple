@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 		// Combination c should be sent trough the network
 
 		// To send, coded data can be accessed with c.data() and c.codedSize()
-		// and coefficients with c.coeff(i) with i between 0 and c.componentsCount()
+		// and coefficients with c.coeff(i) with i between 0 and c.lastComponent()
 
 		// At reception, combination can be rebuilt with c.setCodedData(data, size)
 		// and multiple calls to c.addComponent(i, coefficient)
